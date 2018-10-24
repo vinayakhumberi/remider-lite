@@ -1,9 +1,13 @@
-<form class="example-form">
-  <mat-form-field class="example-full-width">
-    <input matInput placeholder="Favorite food" value="Sushi">
-  </mat-form-field>
-  <br />
-  <mat-form-field class="example-full-width">
-    <textarea matInput placeholder="Leave a comment"></textarea>
-  </mat-form-field>
-</form>
+<div class="reminder-container">
+  <mat-card class="card" *ngFor="let reminder of reminders$">
+    <mat-card-title>Task-{{reminder.id}}</mat-card-title>
+    <mat-card-subtitle>12 Nov 2018</mat-card-subtitle>
+    <mat-card-content>{{reminder.title}}</mat-card-content>
+    <mat-card-actions>
+      <mat-chip-list>
+        <mat-chip *ngIf="reminder.completed" color="primary" selected>Completed</mat-chip>
+        <mat-chip *ngIf="!reminder.completed" color="accent" selected>In Complete</mat-chip>
+      </mat-chip-list>
+    </mat-card-actions>
+  </mat-card>
+</div>

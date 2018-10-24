@@ -1,12 +1,18 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { ProfileComponent } from './profile/profile.component';
-import { MatInputModule } from '@angular/material/input';
+import {
+  MatInputModule,
+  MatToolbarModule,
+  MatCardModule,
+  MatChipsModule
+} from '@angular/material';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 @NgModule({
@@ -19,8 +25,12 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule,
     BrowserAnimationsModule,
-    MatInputModule
+    MatInputModule,
+    MatToolbarModule,
+    MatCardModule,
+    MatChipsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
